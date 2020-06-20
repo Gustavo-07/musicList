@@ -3,14 +3,18 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'musica',
+    loadChildren: () => import('./musica/musica.module').then( m => m.MusicaPageModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'musica',
     pathMatch: 'full'
   },
+  {
+    path: 'detallemusica/:musicaIndex',
+    loadChildren: () => import('./detallemusica/detallemusica.module').then( m => m.DetallemusicaPageModule)
+  }
 ];
 
 @NgModule({

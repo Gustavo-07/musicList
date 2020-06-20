@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button>
+        <ion-icon>
+          <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        </ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>detall de musica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="currentMusica">
+    <ion-card class=" borde-radio-6 ">  
+      <ion-item>
+        <ion-card-title  color="dark" id="titulo" class="ion-text-capitalize margin-left">{{currentMusica.title}}</ion-card-title> 
+      </ion-item>   
+      <img  [src]="currentMusica.artist.picture_big"  class="w-h-150  overflow-none">
+      <ion-item>
+        <ion-card-subtitle class="ion-text-justify overflow-ellipsis"><strong>Duración: </strong>{{convertidor(currentMusica.duration)}} min</ion-card-subtitle>
+      </ion-item> 
+      <ion-item>
+        <ion-card-subtitle class="ion-text-justify overflow-ellipsis"><strong>Artista: </strong>{{currentMusica.artist.name}}</ion-card-subtitle>
+      </ion-item> 
+      <ion-item>
+        <ion-card-subtitle  class="ion-text-justify overflow-ellipsis"><strong>Albúm: </strong>{{currentMusica.album.title}} </ion-card-subtitle>
+      </ion-item>        
+    </ion-card>
+  </div>
+
+</ion-content>
